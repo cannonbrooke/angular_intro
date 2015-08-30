@@ -23,14 +23,20 @@
       <li ng-repeat="character in characters">
         {{character}}
       </li>
+    <input ng-model="searchMovieYear" type="text" placeholder="Search Movie Years" value="">
+
+    <input ng-model="searchBookTitle" type="text" placeholder="search book title" value="">
     <ul>
-      <li ng-repeat="book in books">
+      <li ng-repeat="book in books | filter: { title: searchBookTitle}">
         <h4>{{book.title}}</h4>
         <p>{{book.author}}</p>
       </li>
     </ul>
+    <input ng-model='movieFilter' placeholder="2020" type="text" name="name" value="2020">
     <ul>
-      <li ng-repeat="movie in movies"> {{movie.title}}</li>
+      <li ng-repeat="movie in movies | beforeYearFilter: movieFilter | orderBy: 'title'">
+      {{movie.title}}
+      </li>
     </ul>
     <input ng-model='newBookTitle' placeholder="title" type="text" name="name" value="value">
     <input ng-model='newBookAuthor' placeholder="author" type="text" name="name" value="value">
@@ -49,6 +55,7 @@
   <script type="text/javascript" src="/js/providers.js"></script>
   <script type="text/javascript" src="/js/factories.js"></script>
   <script type="text/javascript" src="/js/services.js"></script>
+  <script type="text/javascript" src="/js/filters.js"></script>
   <script type="text/javascript" src="/js/providers.js"></script>
   <script type="text/javascript" src="/js/myController.controller.js"></script>
   <script type="text/javascript" src="/js/constants.js"></script>
