@@ -2,7 +2,11 @@
   angular
     .module('myApp')
     .service('BookService', function(){
-      var books = ['Ready Player One', 'Harry Potter', 'Neuromancer'];
+      var books = [
+      { title:'Ready Player One', author: 'Earnest Something'},
+      { title:'Harry Potter', author: 'J.K. Something'},
+      { title: 'Neuromancer', author: 'William Something'}
+      ];
 
       this.getBooks = function() {
         return books;
