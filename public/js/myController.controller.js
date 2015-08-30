@@ -1,9 +1,9 @@
 (function(){
   angular
     .module('myApp')
-    .controller('myController', ['$scope', 'myAppTitle', 'APP_VERSION', function($scope, myAppTitle, APP_VERSION){
-      console.log(APP_VERSION);
+    .controller('myController', ['$scope', 'myAppTitle', 'CharacterVersionFactory',  function($scope, myAppTitle, CharacterVersionFactory){
       $scope.myModel = "Hello";
       $scope.title = myAppTitle;
+      $scope.characters = CharacterVersionFactory;
   }]);
 })();
