@@ -5,47 +5,11 @@
   <title>Angular App</title>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-resource.js"></script>
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.js"></script>
 </head>
 <body ng-app="myApp">
-<div ng-controller="myController">
-  <h1>{{title}}</h1>
-  <h2>{{APP_VERSION}}</h2>
-  <h1>{{"Hello" + "Angular"}}</h1>
-  <h2>{{ 2 + 3 }}</h2>
+<div ng-view>
 
-  <input ng-model="myModel"
-        type="text"
-        name="input1"
-        id="input1">
-  <p>{{myModel}}</p>
-    <ul>
-      <li ng-repeat="character in characters">
-        {{character}}
-      </li>
-    <input ng-model="searchMovieYear" type="text" placeholder="Search Movie Years" value="">
-
-    <input ng-model="searchBookTitle" type="text" placeholder="search book title" value="">
-    <ul>
-      <li ng-repeat="book in books | filter: { title: searchBookTitle}">
-        <h4>{{book.title}}</h4>
-        <p>{{book.author}}</p>
-      </li>
-    </ul>
-    <input ng-model='movieFilter' placeholder="2020" type="text" name="name" value="2020">
-    <ul>
-      <li ng-repeat="movie in movies | beforeYearFilter: movieFilter | orderBy: 'title'">
-      {{movie.title}}
-      </li>
-    </ul>
-    <input ng-model='newBookTitle' placeholder="title" type="text" name="name" value="value">
-    <input ng-model='newBookAuthor' placeholder="author" type="text" name="name" value="value">
-  <button
-    ng-click="addBook(newBookTitle, newBookAuthor)"
-    type="button"
-    name="button">
-    Add New Book
-  </button>
 </div>
 <footer>
   <small>Version {{APP_VERSION}}</small>
