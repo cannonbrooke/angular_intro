@@ -20,5 +20,9 @@
         return books[index];
 
       };
+        this.addBook = function (title, author){
+          books.push( {title: title, author: author});
+        return books;
+      };
     });
 })();
