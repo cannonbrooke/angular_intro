@@ -1,14 +1,16 @@
 (function(){
   angular
     .module('myApp')
-    .controller('myController', ['$scope', 'myAppTitle', 'CharacterVersionFactory', 'BookService', myController]);
+    .controller('myController', ['$scope', 'myAppTitle', 'CharacterVersionFactory', 'BookService', 'Movies', myController]);
 
-      function myController($scope, myAppTitle, CharacterVersionFactory, BookService){
+      function myController($scope, myAppTitle, CharacterVersionFactory, BookService, Movies){
       $scope.myModel = "Hello";
       $scope.title = myAppTitle;
       $scope.characters = CharacterVersionFactory;
       $scope.books = BookService.getBooks();
       $scope.myFavoriteBook = BookService.getBook();
       $scope.addBook = BookService.addBook;
+      $scope.movies = Movies.query();
+
   }
 })();

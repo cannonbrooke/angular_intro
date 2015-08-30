@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Angular App</title>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-resource.js"></script>
 
 </head>
 <body ng-app="myApp">
@@ -21,13 +22,15 @@
     <ul>
       <li ng-repeat="character in characters">
         {{character}}
-
       </li>
     <ul>
       <li ng-repeat="book in books">
         <h4>{{book.title}}</h4>
         <p>{{book.author}}</p>
       </li>
+    </ul>
+    <ul>
+      <li ng-repeat="movie in movies"> {{movie.title}}</li>
     </ul>
     <input ng-model='newBookTitle' placeholder="title" type="text" name="name" value="value">
     <input ng-model='newBookAuthor' placeholder="author" type="text" name="name" value="value">
@@ -43,8 +46,10 @@
 </footer>
   <script type="text/javascript" src="/js/main.js"></script>
   <script type="text/javascript" src="/js/values.js"></script>
+  <script type="text/javascript" src="/js/providers.js"></script>
   <script type="text/javascript" src="/js/factories.js"></script>
   <script type="text/javascript" src="/js/services.js"></script>
+  <script type="text/javascript" src="/js/providers.js"></script>
   <script type="text/javascript" src="/js/myController.controller.js"></script>
   <script type="text/javascript" src="/js/constants.js"></script>
 </body>
